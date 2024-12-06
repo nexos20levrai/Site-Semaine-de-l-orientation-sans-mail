@@ -1,0 +1,282 @@
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #6c757d;
+    --border-color: rgba(0,0,0,0.1);
+    --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
+    --navbar-bg: #2c3e50;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --modal-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-text: #2c3e50;
+    --btn-text: #000000;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --border-color: rgba(255,255,255,0.15);
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    --accent-color: #0f4496;
+    --accent-hover: #33c5ff;
+    --navbar-bg: #000000;
+    --danger-color: #ff4757;
+    --success-color: #2ed573;
+    --warning-color: #ffa502;
+    --modal-bg: #1a1a1a;
+    --input-bg: #262626;
+    --input-text: #ffffff;
+    --btn-text: #000000;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background: var(--navbar-bg) !important;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    background: #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link, .navbar-text {
+    color: var(--text-primary) !important;
+}
+
+.card {
+    background-color: var(--bg-secondary);
+    border: none;
+    border-radius: 15px;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .card:hover {
+    box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-primary);
+}
+
+.card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    flex-grow: 1;
+    color: var(--text-primary);
+}
+
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--btn-text);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
+    border: none;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,183,255,0.3);
+    color: wheat;
+    background: linear-gradient(45deg, var(--accent-hover), var(--accent-color));
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, var(--danger-color), #c0392b);
+    border: none;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,71,87,0.3);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 0 4px 20px rgba(0,183,255,0.4);
+}
+
+[data-theme="dark"] .btn-danger:hover {
+    box-shadow: 0 4px 20px rgba(255,71,87,0.4);
+}
+
+.btn-outline-light {
+    border-color: #000000;
+    color:  #000000;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.modal-content {
+    background-color: var(--modal-bg);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: var(--text-primary);
+}
+
+.modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+.modal-footer {
+    border-top-color: var(--border-color);
+}
+
+/* Form control styles */
+.form-control, .form-select {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--input-text);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(0,183,255,0.25);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(0,183,255,0.4);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-label {
+    color: var(--text-primary);
+}
+
+.footer {
+    background-color: var(--bg-secondary);
+    padding: 1rem 0;
+    margin-top: auto;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.footer .heart {
+    color: var(--danger-color);
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#themeToggle {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+.bg-dark {
+    background-color: var(--navbar-bg) !important;
+}
+
+select option, select optgroup {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* SweetAlert2 customization */
+.swal2-popup {
+    background-color: var(--modal-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color);
+}
+
+.swal2-title {
+    color: var(--text-primary) !important;
+}
+
+.swal2-html-container {
+    color: var(--text-secondary) !important;
+}
+
+.swal2-confirm {
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover)) !important;
+    color: #ffffff!important;
+}
+
+.swal2-cancel {
+    background: linear-gradient(45deg, var(--text-secondary), #495057) !important;
+    color: #ffffff !important;
+}
+
+.swal2-icon {
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+.swal2-close {
+    color: var(--text-primary) !important;
+}
+
+.swal2-timer-progress-bar {
+    background: var(--accent-color) !important;
+}
